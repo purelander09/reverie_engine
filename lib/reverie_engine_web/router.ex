@@ -35,6 +35,8 @@ defmodule ReverieEngineWeb.Router do
     post "/:endpoint", EDIController, :receive_message
   end
 
+  use Kaffy.Routes, scope: "/admin"
+
   # Other scopes may use custom stacks.
   # scope "/api", ReverieEngineWeb do
   #   pipe_through :api
