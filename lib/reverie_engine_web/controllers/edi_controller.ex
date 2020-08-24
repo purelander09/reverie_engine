@@ -1,4 +1,4 @@
-defmodule ReverieEngineWeb.EndpointController do
+defmodule ReverieEngineWeb.EDIController do
     use ReverieEngineWeb, :controller
 
     def index(conn, _params) do

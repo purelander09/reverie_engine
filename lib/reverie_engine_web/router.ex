@@ -13,7 +13,8 @@ defmodule ReverieEngineWeb.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :endpoint do
+  pipeline :edi do
+    plug :accepts, ["*"]
   end
 
   scope "/", ReverieEngineWeb do
@@ -22,13 +23,16 @@ defmodule ReverieEngineWeb.Router do
     get "/", PageController, :index
   end
 
-  scope "/endpoint", ReverieEngineWeb do
-    pipe_through :endpoint
+  scope "edi", ReverieEngineWeb do
+    pipe_through :browser
 
-    get "/", EndpointController, :index
-    get "/:endpoint", EndpointController, :show_message_history
+    get "/", EDIController, :index
+    get "/:endpoint", EDIController, :show_message_history
+  end
 
-    post "/:endpoint", EndpointController, :receive_message
+  scope "edi", ReverieEngineWeb do
+    pipe_through :edi
+    post "/:endpoint", EDIController, :receive_message
   end
 
   # Other scopes may use custom stacks.

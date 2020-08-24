@@ -14,9 +14,10 @@ defmodule ReverieEngine.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ReverieEngine.PubSub},
       # Start the Endpoint (http/https)
-      ReverieEngineWeb.Endpoint
+      ReverieEngineWeb.Endpoint,
       # Start a worker by calling: ReverieEngine.Worker.start_link(arg)
       # {ReverieEngine.Worker, arg}
+      ReverieMessageToolkit.MessageParser
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
