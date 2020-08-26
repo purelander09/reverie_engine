@@ -1,5 +1,11 @@
 <section class="row">
     <article class="column">
         <h2>Available Endpoints</h2>
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>Endpoint Name</h4></li>
+            <%= for {endpoint, index} <- Enum.with_index(@endpoints) do %>
+                <li class="collection-item"><%= endpoint.name %></li>
+            <% end %>
+        </ul>
     </article>
 </section>

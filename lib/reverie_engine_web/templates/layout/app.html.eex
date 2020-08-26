@@ -5,23 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Reverie Engine version 0.1.0</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><%= link "Endpoints", to: Routes.edi_path(@conn, :index)%></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "Live Dashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <h1><%= link "Reverie Engine", to: Routes.page_path(@conn, :index) %></h1>
-      </section>
-    </header>
+    <nav role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Reverie Engine</a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link "Endpoints", to: Routes.edi_path(@conn, :index)%></li>
+          <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
+            <li><%= link "Live Dashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+          <% end %>
+          <li><a href="/admin">Admin</a></li>
+        </ul>
+      </div>
+    </nav>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

@@ -1,8 +1,12 @@
 defmodule ReverieEngineWeb.EDIController do
     use ReverieEngineWeb, :controller
 
+    alias ReverieEngine.Communication
+    alias ReverieEngine.Receiver
+
     def index(conn, _params) do
-        render(conn, "index.html")
+        endpoints = Communication.list_endpoints()
+        render(conn, "index.html", endpoints: endpoints )
     end
 
     def show(conn, %{"id" => id}) do
