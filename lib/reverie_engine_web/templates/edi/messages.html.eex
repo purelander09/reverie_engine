@@ -4,7 +4,7 @@
         <ul class="collection with-header">
             <li class="collection-header"><h4>Messages</h4></li>
             <%= for {message, index} <- Enum.with_index(@messages) do %>
-                <li class="collection-item"><%= message.received %></li>
+                <li class="collection-item"><%= link message.received, to: Routes.message_history_path(@conn, :show, message.id) %></li>
             <% end %>
         </ul>
     </article>

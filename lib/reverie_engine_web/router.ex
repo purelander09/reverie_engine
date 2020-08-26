@@ -42,7 +42,13 @@ defmodule ReverieEngineWeb.Router do
     get "/:endpoint", EDIController, :show_message_history
   end
 
-  scope "/edi", ReverieEngineWeb do
+  scope "/message", ReverieEngineWeb do
+    pipe_through :browser
+
+    get "/:id", MessageHistoryController, :show
+  end
+
+  scope "/edi/receive", ReverieEngineWeb do
     pipe_through :edi
     post "/:endpoint", EDIController, :receive_message
   end

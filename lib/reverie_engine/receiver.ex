@@ -106,7 +106,8 @@ defmodule ReverieEngine.Receiver do
   """
   def messages_for_endpoint(endpoint) do
     query = from p in Message,
-      select: p.endpoint == ^endpoint
+      where: p.endpoint == ^endpoint,
+      select: p
     Repo.all(query)
   end
 end

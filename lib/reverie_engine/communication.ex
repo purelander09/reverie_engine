@@ -101,4 +101,8 @@ defmodule ReverieEngine.Communication do
   def change_endpoint(%Endpoint{} = endpoint, attrs \\ %{}) do
     Endpoint.changeset(endpoint, attrs)
   end
+
+  def get_endpoint_by_name(name) do
+    Repo.get_by(Endpoint, name: name)
+  end
 end
