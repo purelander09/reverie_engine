@@ -1,18 +1,8 @@
-# ReverieEngine
+# Reverie Engine
 
-To start your Phoenix server:
+## An Interface Engine Written in Elixir
+Reverie Engine is an engine for handling EDI using Elixir as it's main programming language.
 
-  * Setup the project with `mix setup`
-  * Start Phoenix endpoint with `mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+# NOTES
+Reverie Engine is under active development and is in early development. It is not ready for production or even a testing environment. This project is in the early days of development.

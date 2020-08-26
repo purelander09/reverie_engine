@@ -16,5 +16,7 @@ defmodule ReverieEngineWeb.EDIController do
     end
 
     def show_message_history(conn, %{"endpoint" => endpoint}) do
+        messages = Receiver.messages_for_endpoint(endpoint)
+        render(conn, "messages.html", messages: messages)
     end
 end

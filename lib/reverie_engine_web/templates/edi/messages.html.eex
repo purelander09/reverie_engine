@@ -1,0 +1,11 @@
+<section class="row">
+    <article class="column">
+        <h2>Message History</h2>
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>Messages</h4></li>
+            <%= for {message, index} <- Enum.with_index(@messages) do %>
+                <li class="collection-item"><%= message.received %></li>
+            <% end %>
+        </ul>
+    </article>
+</section>

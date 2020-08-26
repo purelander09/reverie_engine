@@ -101,4 +101,12 @@ defmodule ReverieEngine.Receiver do
   def change_message(%Message{} = message, attrs \\ %{}) do
     Message.changeset(message, attrs)
   end
+
+  @doc """
+  """
+  def messages_for_endpoint(endpoint) do
+    query = from p in Message,
+      select: p.endpoint == ^endpoint
+    Repo.all(query)
+  end
 end
