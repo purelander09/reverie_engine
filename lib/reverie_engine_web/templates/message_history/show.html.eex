@@ -1,5 +1,19 @@
 <section class="row">
     <article class="column">
         <h2>Message Details</h2>
+        <ul class="collection">
+            <li class="collection-item">Received:&nbsp;<%= @message.received %></li>
+            <li class="collection-item">Sent:&nbsp;<%= @message.sent %></li>
+            <li class="collection-item"><code><%= @message.message_body %></code></li>
+        </ul>
+        <ul class="collection">
+            <li class="collection-item">Version: <%= inspect Map.fetch(@parsed_message, :version) %>
+            <li class="collection-item">MSH:&nbsp;
+                <code>
+                    <%= inspect Map.fetch(@parsed_message, :MSH) %>
+                </code>
+            </li>
+
+        </ul>
     </article>
 </section>

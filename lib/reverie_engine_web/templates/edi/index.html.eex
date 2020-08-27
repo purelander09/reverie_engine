@@ -4,7 +4,7 @@
         <ul class="collection with-header">
             <li class="collection-header"><h4>Endpoint Name</h4></li>
             <%= for {endpoint, index} <- Enum.with_index(@endpoints) do %>
-                <li class="collection-item"><%= endpoint.name %></li>
+                <li class="collection-item"><%= link endpoint.name, to: Routes.edi_path(@conn, :show, endpoint.id) %></li>
             <% end %>
         </ul>
     </article>

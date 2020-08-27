@@ -1,5 +1,9 @@
 <section class="row">
     <article class="column">
         <h2>Endpoint Details</h2>
+        <ul class="collection">
+            <li class="collection-item">Name:&nbsp;<%= @endpoint.name %></li>
+            <li class="collection-item"><%= link "Endpoint Message History", to: Routes.edi_path(@conn, :show_message_history, @endpoint.name) %>
+        </ul>
     </article>
 </section>

@@ -39,6 +39,7 @@ defmodule ReverieEngineWeb.Router do
     pipe_through :browser
 
     get "/", EDIController, :index
+    get "/details/:id", EDIController, :show
     get "/:endpoint", EDIController, :show_message_history
   end
 
