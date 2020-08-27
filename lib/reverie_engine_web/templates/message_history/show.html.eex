@@ -7,13 +7,13 @@
             <li class="collection-item"><code><%= @message.message_body %></code></li>
         </ul>
         <ul class="collection">
-            <li class="collection-item">Version: <%= inspect Map.fetch(@parsed_message, :version) %>
+            <li class="collection-item">Version: <%= @version %>
             <li class="collection-item">MSH:&nbsp;
                 <code>
-                    <%= inspect Map.fetch(@parsed_message, :MSH) %>
+                    <%= @msh %>
                 </code>
             </li>
-
+            <li class="collection-item">Separators: Field:<%= @field_separator %> Repeat: <%= @repeat_separator %>
         </ul>
     </article>
 </section>
